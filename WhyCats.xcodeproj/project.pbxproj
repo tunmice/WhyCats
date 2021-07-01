@@ -16,6 +16,22 @@
 		22DB4139268E3A1A0007EBCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DB4137268E3A1A0007EBCA /* LaunchScreen.storyboard */; };
 		22DB4144268E3A1B0007EBCA /* WhyCatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB4143268E3A1B0007EBCA /* WhyCatsTests.swift */; };
 		22DB414F268E3A1B0007EBCA /* WhyCatsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB414E268E3A1B0007EBCA /* WhyCatsUITests.swift */; };
+		22DB4168268E3ABD0007EBCA /* AllCatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB4166268E3ABD0007EBCA /* AllCatsViewController.swift */; };
+		22DB4169268E3ABD0007EBCA /* AllCatsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DB4167268E3ABD0007EBCA /* AllCatsViewController.xib */; };
+		22DB4172268E3ACC0007EBCA /* LikedCatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB4170268E3ACC0007EBCA /* LikedCatsViewController.swift */; };
+		22DB4173268E3ACC0007EBCA /* LikedCatsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DB4171268E3ACC0007EBCA /* LikedCatsViewController.xib */; };
+		22DB4178268E3CA00007EBCA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB4177268E3CA00007EBCA /* AppCoordinator.swift */; };
+		22DB417D268E3E9B0007EBCA /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB417C268E3E9B0007EBCA /* MainCoordinator.swift */; };
+		22DB4182268E3EA60007EBCA /* Storybored.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB4181268E3EA60007EBCA /* Storybored.swift */; };
+		22DB4188268E3FCA0007EBCA /* WhyCatsTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB4186268E3FCA0007EBCA /* WhyCatsTabBarController.swift */; };
+		22DB4189268E3FCA0007EBCA /* WhyCatsTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DB4187268E3FCA0007EBCA /* WhyCatsTabBarController.xib */; };
+		22DB418E268E3FEF0007EBCA /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB418D268E3FEF0007EBCA /* TabBarCoordinator.swift */; };
+		22DB4194268E40750007EBCA /* AllCatsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB4193268E40750007EBCA /* AllCatsCoordinator.swift */; };
+		22DB4199268E407C0007EBCA /* LikedCatsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB4198268E407C0007EBCA /* LikedCatsCoordinator.swift */; };
+		22DB41A5268E57750007EBCA /* AllCatsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB41A3268E57750007EBCA /* AllCatsCollectionViewCell.swift */; };
+		22DB41A6268E57750007EBCA /* AllCatsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DB41A4268E57750007EBCA /* AllCatsCollectionViewCell.xib */; };
+		22DB41AC268E57840007EBCA /* LikedCatsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB41AA268E57840007EBCA /* LikedCatsCollectionViewCell.swift */; };
+		22DB41AD268E57840007EBCA /* LikedCatsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DB41AB268E57840007EBCA /* LikedCatsCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +67,22 @@
 		22DB414A268E3A1B0007EBCA /* WhyCatsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhyCatsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DB414E268E3A1B0007EBCA /* WhyCatsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhyCatsUITests.swift; sourceTree = "<group>"; };
 		22DB4150268E3A1B0007EBCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22DB4166268E3ABD0007EBCA /* AllCatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCatsViewController.swift; sourceTree = "<group>"; };
+		22DB4167268E3ABD0007EBCA /* AllCatsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllCatsViewController.xib; sourceTree = "<group>"; };
+		22DB4170268E3ACC0007EBCA /* LikedCatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedCatsViewController.swift; sourceTree = "<group>"; };
+		22DB4171268E3ACC0007EBCA /* LikedCatsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikedCatsViewController.xib; sourceTree = "<group>"; };
+		22DB4177268E3CA00007EBCA /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		22DB417C268E3E9B0007EBCA /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		22DB4181268E3EA60007EBCA /* Storybored.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storybored.swift; sourceTree = "<group>"; };
+		22DB4186268E3FCA0007EBCA /* WhyCatsTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhyCatsTabBarController.swift; sourceTree = "<group>"; };
+		22DB4187268E3FCA0007EBCA /* WhyCatsTabBarController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WhyCatsTabBarController.xib; sourceTree = "<group>"; };
+		22DB418D268E3FEF0007EBCA /* TabBarCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		22DB4193268E40750007EBCA /* AllCatsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllCatsCoordinator.swift; sourceTree = "<group>"; };
+		22DB4198268E407C0007EBCA /* LikedCatsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikedCatsCoordinator.swift; sourceTree = "<group>"; };
+		22DB41A3268E57750007EBCA /* AllCatsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCatsCollectionViewCell.swift; sourceTree = "<group>"; };
+		22DB41A4268E57750007EBCA /* AllCatsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllCatsCollectionViewCell.xib; sourceTree = "<group>"; };
+		22DB41AA268E57840007EBCA /* LikedCatsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedCatsCollectionViewCell.swift; sourceTree = "<group>"; };
+		22DB41AB268E57840007EBCA /* LikedCatsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikedCatsCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +133,13 @@
 		22DB4128268E3A190007EBCA /* WhyCats */ = {
 			isa = PBXGroup;
 			children = (
+				22DB4165268E3A900007EBCA /* Core Data */,
+				22DB4164268E3A820007EBCA /* Repositories */,
+				22DB4163268E3A700007EBCA /* Coordinators */,
+				22DB4162268E3A680007EBCA /* Networking */,
+				22DB4161268E3A620007EBCA /* Models */,
+				22DB4160268E3A590007EBCA /* View Models */,
+				22DB415F268E3A520007EBCA /* Views */,
 				22DB4129268E3A190007EBCA /* AppDelegate.swift */,
 				22DB412B268E3A190007EBCA /* SceneDelegate.swift */,
 				22DB412D268E3A190007EBCA /* ViewController.swift */,
@@ -129,6 +168,79 @@
 				22DB4150268E3A1B0007EBCA /* Info.plist */,
 			);
 			path = WhyCatsUITests;
+			sourceTree = "<group>";
+		};
+		22DB415F268E3A520007EBCA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				22DB4166268E3ABD0007EBCA /* AllCatsViewController.swift */,
+				22DB4167268E3ABD0007EBCA /* AllCatsViewController.xib */,
+				22DB4170268E3ACC0007EBCA /* LikedCatsViewController.swift */,
+				22DB4171268E3ACC0007EBCA /* LikedCatsViewController.xib */,
+				22DB4186268E3FCA0007EBCA /* WhyCatsTabBarController.swift */,
+				22DB4187268E3FCA0007EBCA /* WhyCatsTabBarController.xib */,
+				22DB41A3268E57750007EBCA /* AllCatsCollectionViewCell.swift */,
+				22DB41A4268E57750007EBCA /* AllCatsCollectionViewCell.xib */,
+				22DB41AA268E57840007EBCA /* LikedCatsCollectionViewCell.swift */,
+				22DB41AB268E57840007EBCA /* LikedCatsCollectionViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		22DB4160268E3A590007EBCA /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		22DB4161268E3A620007EBCA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		22DB4162268E3A680007EBCA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		22DB4163268E3A700007EBCA /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				22DB4192268E40250007EBCA /* TabBar Member Controllers */,
+				22DB4177268E3CA00007EBCA /* AppCoordinator.swift */,
+				22DB4181268E3EA60007EBCA /* Storybored.swift */,
+				22DB417C268E3E9B0007EBCA /* MainCoordinator.swift */,
+				22DB418D268E3FEF0007EBCA /* TabBarCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		22DB4164268E3A820007EBCA /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		22DB4165268E3A900007EBCA /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		22DB4192268E40250007EBCA /* TabBar Member Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				22DB4193268E40750007EBCA /* AllCatsCoordinator.swift */,
+				22DB4198268E407C0007EBCA /* LikedCatsCoordinator.swift */,
+			);
+			path = "TabBar Member Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,8 +347,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				22DB4139268E3A1A0007EBCA /* LaunchScreen.storyboard in Resources */,
+				22DB4169268E3ABD0007EBCA /* AllCatsViewController.xib in Resources */,
 				22DB4136268E3A1A0007EBCA /* Assets.xcassets in Resources */,
+				22DB41AD268E57840007EBCA /* LikedCatsCollectionViewCell.xib in Resources */,
+				22DB4173268E3ACC0007EBCA /* LikedCatsViewController.xib in Resources */,
+				22DB41A6268E57750007EBCA /* AllCatsCollectionViewCell.xib in Resources */,
 				22DB4131268E3A190007EBCA /* Main.storyboard in Resources */,
+				22DB4189268E3FCA0007EBCA /* WhyCatsTabBarController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +378,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22DB4199268E407C0007EBCA /* LikedCatsCoordinator.swift in Sources */,
 				22DB412E268E3A190007EBCA /* ViewController.swift in Sources */,
+				22DB4188268E3FCA0007EBCA /* WhyCatsTabBarController.swift in Sources */,
+				22DB41A5268E57750007EBCA /* AllCatsCollectionViewCell.swift in Sources */,
+				22DB4182268E3EA60007EBCA /* Storybored.swift in Sources */,
+				22DB417D268E3E9B0007EBCA /* MainCoordinator.swift in Sources */,
+				22DB4168268E3ABD0007EBCA /* AllCatsViewController.swift in Sources */,
+				22DB41AC268E57840007EBCA /* LikedCatsCollectionViewCell.swift in Sources */,
+				22DB4194268E40750007EBCA /* AllCatsCoordinator.swift in Sources */,
 				22DB412A268E3A190007EBCA /* AppDelegate.swift in Sources */,
+				22DB418E268E3FEF0007EBCA /* TabBarCoordinator.swift in Sources */,
 				22DB412C268E3A190007EBCA /* SceneDelegate.swift in Sources */,
 				22DB4134268E3A190007EBCA /* WhyCats.xcdatamodeld in Sources */,
+				22DB4172268E3ACC0007EBCA /* LikedCatsViewController.swift in Sources */,
+				22DB4178268E3CA00007EBCA /* AppCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
