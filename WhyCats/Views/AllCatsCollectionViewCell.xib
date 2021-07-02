@@ -45,7 +45,7 @@
                                         </constraints>
                                         <state key="normal" image="unlikedHeart"/>
                                         <connections>
-                                            <action selector="likeTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="eHy-eG-Zoq"/>
+                                            <action selector="likeTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="J8L-qF-ble"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -68,6 +68,11 @@
                 <constraint firstAttribute="trailing" secondItem="bT3-rC-0sK" secondAttribute="trailing" id="hi0-Zc-Tgq"/>
                 <constraint firstAttribute="bottom" secondItem="bT3-rC-0sK" secondAttribute="bottom" id="nDP-Cl-ocQ"/>
             </constraints>
+            <connections>
+                <outlet property="catImageView" destination="L2l-rM-hCg" id="hbW-zC-1wP"/>
+                <outlet property="catName" destination="cVK-05-fJj" id="2oo-1q-S7r"/>
+                <outlet property="likeButton" destination="Hiu-vd-tFj" id="uCn-95-TRv"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="92.075892857142847"/>
         </collectionViewCell>
     </objects>

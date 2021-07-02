@@ -7,14 +7,32 @@
 
 import UIKit
 
-class AllCatsCollectionViewCell: UICollectionViewCell {
+protocol MyCellDelegate : NSObjectProtocol {
+    func optionButton1DidToggle(in cell: UICollectionViewCell?)
+}
 
+class AllCatsCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var catName: UILabel!
+    
+    @IBOutlet weak var catImageView: UIImageView!
+    
+    var delegate : MyCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    override func prepareForReuse() {
+        likeButton.isSelected = false
+    }
 
+
+   
     @IBAction func likeTapped(_ sender: UIButton) {
+        
+        
+        
         sender.isSelected = !sender.isSelected
         
         if sender.isSelected {

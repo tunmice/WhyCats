@@ -6,17 +6,79 @@
 //
 
 import UIKit
+import CoreData
+import Swinject
 
-class AllCatsViewController: UIViewController {
+class AllCatsViewController: UIViewController, NSFetchedResultsControllerDelegate {
+    
     var coordinator: AllCatsCoordinator?
     
     @IBOutlet weak var allCatsCollectionFlowLayout: UICollectionViewFlowLayout!
     @IBOutlet weak var allCatsCollectionView: UICollectionView!
+    
+    private let cats: CatsRepo = Container.sharedContainer.resolve(CatsRepo.self)!
+    
+    let catList = [CatsModel]()
+    
+    lazy var catsFetchedResultController:NSFetchedResultsController<AllCatsCoreDataModel> = {
+        let fetchedRequest = NSFetchRequest<AllCatsCoreDataModel>(entityName: "AllCatsCoreDataModel")
+        var sdSortDate = NSSortDescriptor.init(key: "name", ascending: true)
+//        let firstPredicate = NSPredicate(format: "conversationcode == %@", self.conversation_code)
+        fetchedRequest.sortDescriptors = [sdSortDate]
+//        fetchedRequest.predicate = firstPredicate
+        let controller = NSFetchedResultsController(fetchRequest: fetchedRequest, managedObjectContext: CoreDataStack.shared.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        
+        controller.delegate = self as NSFetchedResultsControllerDelegate
+        
+        do{
+            try controller.performFetch()
+        }catch{
+            
+        }
+        
+        return controller
+    }()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        callCats()
         setAppearances()
         setCollectionViewTings()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        callCats()
+    }
+    
+    
+    
+  
+
+    
+    
+    func callCats() {
+
+        cats.fetchCatsList()
+        cats.fetchCats(completion: { response in
+            
+            if case let .success(data) = response {
+                print(response)
+                print("\(data[0])")
+                DispatchQueue.main.async {
+                    self.allCatsCollectionView.reloadData()
+                }
+                
+            }else if case let .failure(errorMessage) = response {
+                print("error wa o \(errorMessage)")
+            }else if case let .error(error) = response{
+                print("\(error?.localizedDescription ?? "")")
+               
+            }
+            
+        })
     }
     func setAppearances() {
         navigationItem.title = "All Cats"
@@ -43,14 +105,21 @@ extension AllCatsViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        25
+        catsFetchedResultController.fetchedObjects?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let dequeueCell = allCatsCollectionView.dequeueReusableCell(withReuseIdentifier: "AllCatsCollectionViewCell", for: indexPath)
         guard let cellOne = dequeueCell as? AllCatsCollectionViewCell else {fatalError("Wrong Cell")}
+        let items = catsFetchedResultController.object(at: indexPath)
+        cellOne.catName.text = items.name ?? ""
+//        cellOne.likeButton.
+//        cellOne.likeButton.addTarget(self, action:  #selector(likeButtonTapped), for: .touchUpInside)
+//        allCatsCollectionView.reloadData()
+//        print("smurfs \(catList[0].name ?? "")")
         
-            return cellOne
+        return cellOne
+      
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -61,6 +130,25 @@ extension AllCatsViewController: UICollectionViewDelegate, UICollectionViewDataS
           let itemDimension = floor(availableWidth / numberOfItemsPerRow)
           return CGSize(width: itemDimension, height: 55)
       }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        print("Message Data Reloaded")
+        
+        allCatsCollectionView.reloadData()
+     
+    }
+    
+    @IBAction func likeButtonTapped(_ sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
+        
+        if sender.isSelected {
+            sender.setImage(UIImage(named: "RedLikedHeart"), for: .selected)
+//            sender.setBackgroundImage(UIImage(named: "RedLikedHeart"), for: .selected)
+        } else {
+            sender.setImage(UIImage(named: "unlikedHeart"), for: .normal)
+        }
+    }
     
    
 }
