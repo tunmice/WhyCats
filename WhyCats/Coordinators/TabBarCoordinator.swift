@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+@available(iOS 13.0, *)
 class TabBarCoordinator: Coordinator {
     
     weak var parentCoordinator: MainCoordinator?

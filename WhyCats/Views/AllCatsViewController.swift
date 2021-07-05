@@ -10,6 +10,7 @@ import CoreData
 import Swinject
 import Kingfisher
 
+@available(iOS 13.0, *)
 class AllCatsViewController: UIViewController, NSFetchedResultsControllerDelegate {
     
     var coordinator: AllCatsCoordinator?
@@ -62,7 +63,7 @@ class AllCatsViewController: UIViewController, NSFetchedResultsControllerDelegat
         if catsFetchedResultController.fetchedObjects?.count == 0 {
             catCall()
         } else {
-            print("file be")
+            
         }
         
         
@@ -71,7 +72,7 @@ class AllCatsViewController: UIViewController, NSFetchedResultsControllerDelegat
     override func viewDidAppear(_ animated: Bool) {
         //        callCats()
     }
-    
+    //MARK:- fetch cats from api
     func catCall() {
         
         cats.fetchCatsList()
@@ -109,6 +110,8 @@ class AllCatsViewController: UIViewController, NSFetchedResultsControllerDelegat
             
         })
     }
+    
+    
     func setAppearances() {
         navigationItem.title = "All Cats"
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -116,6 +119,7 @@ class AllCatsViewController: UIViewController, NSFetchedResultsControllerDelegat
         
     }
     
+    //MARK:- setup spinner activity indicator
     func setIndicators() {
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(activityIndicator)
@@ -127,6 +131,8 @@ class AllCatsViewController: UIViewController, NSFetchedResultsControllerDelegat
     
 }
 
+//MARK:- collectionviews setup extension
+@available(iOS 13.0, *)
 extension AllCatsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func setCollectionViewTings() {
@@ -152,10 +158,7 @@ extension AllCatsViewController: UICollectionViewDelegate, UICollectionViewDataS
         let url = URL(string: items.image ?? "")
         cellOne.catImageView.kf.setImage(with: url )
         
-        
-        
-        //
-        
+        // set like accessory appearance
         if items.liked == true {
             cellOne.likeButton.setImage(UIImage(named: "RedLikedHeart"), for: .normal)
             print("liked")

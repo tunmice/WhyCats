@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 class ViewController: UIViewController, Storyboarded {
     var coordinator: MainCoordinator?
     override func viewDidLoad() {

@@ -82,6 +82,7 @@ extension LikedCatsViewController: UICollectionViewDelegate, UICollectionViewDat
             print("file be")
         }
         return catsFetchedResultController.fetchedObjects?.count ?? 0
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

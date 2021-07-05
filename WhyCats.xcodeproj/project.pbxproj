@@ -159,6 +159,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22707DCB26935E65008F92CF /* collectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				22DB41A3268E57750007EBCA /* AllCatsCollectionViewCell.swift */,
+				22DB41A4268E57750007EBCA /* AllCatsCollectionViewCell.xib */,
+				22DB41AA268E57840007EBCA /* LikedCatsCollectionViewCell.swift */,
+				22DB41AB268E57840007EBCA /* LikedCatsCollectionViewCell.xib */,
+			);
+			path = collectionViewCells;
+			sourceTree = "<group>";
+		};
+		22707DCC26935E7C008F92CF /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				22DB4186268E3FCA0007EBCA /* WhyCatsTabBarController.swift */,
+				22DB4187268E3FCA0007EBCA /* WhyCatsTabBarController.xib */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		22DB411D268E3A190007EBCA = {
 			isa = PBXGroup;
 			children = (
@@ -223,16 +243,12 @@
 		22DB415F268E3A520007EBCA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				22707DCC26935E7C008F92CF /* TabBar */,
+				22707DCB26935E65008F92CF /* collectionViewCells */,
 				22DB4166268E3ABD0007EBCA /* AllCatsViewController.swift */,
 				22DB4167268E3ABD0007EBCA /* AllCatsViewController.xib */,
 				22DB4170268E3ACC0007EBCA /* LikedCatsViewController.swift */,
 				22DB4171268E3ACC0007EBCA /* LikedCatsViewController.xib */,
-				22DB4186268E3FCA0007EBCA /* WhyCatsTabBarController.swift */,
-				22DB4187268E3FCA0007EBCA /* WhyCatsTabBarController.xib */,
-				22DB41A3268E57750007EBCA /* AllCatsCollectionViewCell.swift */,
-				22DB41A4268E57750007EBCA /* AllCatsCollectionViewCell.xib */,
-				22DB41AA268E57840007EBCA /* LikedCatsCollectionViewCell.swift */,
-				22DB41AB268E57840007EBCA /* LikedCatsCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -804,6 +820,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C4WFXJG8SF;
 				INFOPLIST_FILE = WhyCats/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -824,6 +841,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C4WFXJG8SF;
 				INFOPLIST_FILE = WhyCats/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

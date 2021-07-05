@@ -19,30 +19,32 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7lD-J8-cRt">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="177"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hf6-IG-waw">
-                                <rect key="frame" x="0.0" y="0.0" width="150" height="177"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bDC-Cg-WwX">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="173"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="largeCat" translatesAutoresizingMaskIntoConstraints="NO" id="eOU-f7-sTp">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="7tD-p2-Plx"/>
-                                            <constraint firstAttribute="height" constant="150" id="cfP-wO-ECX"/>
+                                            <constraint firstAttribute="height" constant="150" id="MYc-9C-XI9"/>
+                                            <constraint firstAttribute="width" constant="150" id="meC-IF-4oS"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="FM2-e6-ymX">
-                                        <rect key="frame" x="0.0" y="155" width="150" height="22"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="aT5-pv-v9C">
+                                        <rect key="frame" x="0.0" y="158" width="150" height="15"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phat Cats" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8M-LU-eoj">
-                                                <rect key="frame" x="0.0" y="0.0" width="59" height="22"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="114" height="15"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="114" id="lYn-fy-Nxn"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnB-nJ-bIb">
-                                                <rect key="frame" x="105" y="0.0" width="45" height="22"/>
+                                                <rect key="frame" x="126" y="0.0" width="24" height="15"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="45" id="6bo-lw-BEA"/>
-                                                    <constraint firstAttribute="height" constant="22" id="fjT-P0-wu5"/>
+                                                    <constraint firstAttribute="height" constant="15" id="PHI-gA-q7U"/>
                                                 </constraints>
                                                 <state key="normal" image="RedLikedHeart"/>
                                             </button>
@@ -53,27 +55,29 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="hf6-IG-waw" firstAttribute="top" secondItem="7lD-J8-cRt" secondAttribute="top" id="7Py-ED-Zf7"/>
-                            <constraint firstAttribute="bottom" secondItem="hf6-IG-waw" secondAttribute="bottom" id="eZv-KZ-A9o"/>
-                            <constraint firstItem="hf6-IG-waw" firstAttribute="leading" secondItem="7lD-J8-cRt" secondAttribute="leading" id="j9q-WB-GFr"/>
-                            <constraint firstAttribute="trailing" secondItem="hf6-IG-waw" secondAttribute="trailing" id="zKH-N5-cOQ"/>
+                            <constraint firstAttribute="trailing" secondItem="bDC-Cg-WwX" secondAttribute="trailing" id="4wU-Li-MYo"/>
+                            <constraint firstAttribute="bottom" secondItem="bDC-Cg-WwX" secondAttribute="bottom" constant="4" id="MzL-dA-SZN"/>
+                            <constraint firstAttribute="height" constant="177" id="OTb-Yr-Rxe"/>
+                            <constraint firstItem="bDC-Cg-WwX" firstAttribute="leading" secondItem="7lD-J8-cRt" secondAttribute="leading" id="VlK-Iq-FDq"/>
+                            <constraint firstItem="bDC-Cg-WwX" firstAttribute="top" secondItem="7lD-J8-cRt" secondAttribute="top" id="dsr-an-FOF"/>
+                            <constraint firstAttribute="width" constant="150" id="lfJ-a4-2yV"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="7lD-J8-cRt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8OM-du-8us"/>
-                <constraint firstAttribute="trailing" secondItem="7lD-J8-cRt" secondAttribute="trailing" id="HpJ-Jo-NNI"/>
-                <constraint firstItem="7lD-J8-cRt" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="QDf-1e-4MO"/>
-                <constraint firstAttribute="bottom" secondItem="7lD-J8-cRt" secondAttribute="bottom" id="djh-co-64a"/>
+                <constraint firstItem="7lD-J8-cRt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="FQd-Do-aGt"/>
+                <constraint firstAttribute="bottom" secondItem="7lD-J8-cRt" secondAttribute="bottom" id="fRP-20-pHN"/>
+                <constraint firstAttribute="trailing" secondItem="7lD-J8-cRt" secondAttribute="trailing" id="lB7-FU-OVC"/>
+                <constraint firstItem="7lD-J8-cRt" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mvn-Yd-Y9S"/>
             </constraints>
             <connections>
                 <outlet property="catImageView" destination="eOU-f7-sTp" id="lvt-pw-dKO"/>
                 <outlet property="catName" destination="E8M-LU-eoj" id="tmD-nv-rcM"/>
                 <outlet property="likeButton" destination="bnB-nJ-bIb" id="gPM-6C-d8a"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="69.642857142857139"/>
+            <point key="canvasLocation" x="137.68115942028987" y="69.308035714285708"/>
         </collectionViewCell>
     </objects>
     <resources>

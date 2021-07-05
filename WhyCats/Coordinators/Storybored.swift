@@ -13,6 +13,7 @@ protocol Storyboarded {
 }
 
 extension Storyboarded where Self: UIViewController {
+    @available(iOS 13.0, *)
     static func instantiate() -> Self {
         
         let id = String(describing: self)
