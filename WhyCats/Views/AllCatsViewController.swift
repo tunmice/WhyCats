@@ -21,16 +21,20 @@ class AllCatsViewController: UIViewController, NSFetchedResultsControllerDelegat
     
     let catList = [CatsModel]()
     
+    var activityIndicator = UIActivityIndicatorView(style: .large)
+    
     func someAction() {
         print("I have performed ACTION")
     }
     
+    
+    
     lazy var catsFetchedResultController:NSFetchedResultsController<AllCatsCoreDataModel> = {
         let fetchedRequest = NSFetchRequest<AllCatsCoreDataModel>(entityName: "AllCatsCoreDataModel")
         var sdSortDate = NSSortDescriptor.init(key: "name", ascending: true)
-//        let firstPredicate = NSPredicate(format: "conversationcode == %@", self.conversation_code)
+        //        let firstPredicate = NSPredicate(format: "conversationcode == %@", self.conversation_code)
         fetchedRequest.sortDescriptors = [sdSortDate]
-//        fetchedRequest.predicate = firstPredicate
+        //        fetchedRequest.predicate = firstPredicate
         let controller = NSFetchedResultsController(fetchRequest: fetchedRequest, managedObjectContext: CoreDataStack.shared.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         
         controller.delegate = self as NSFetchedResultsControllerDelegate
@@ -44,16 +48,19 @@ class AllCatsViewController: UIViewController, NSFetchedResultsControllerDelegat
         return controller
     }()
     
-    
+    override func loadViewIfNeeded() {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         setAppearances()
         setCollectionViewTings()
+        setIndicators()
         
         if catsFetchedResultController.fetchedObjects?.count == 0 {
-            callCats()
+            catCall()
         } else {
             print("file be")
         }
@@ -62,23 +69,42 @@ class AllCatsViewController: UIViewController, NSFetchedResultsControllerDelegat
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        callCats()
+        //        callCats()
     }
- 
-    func callCats() {
-
+    
+    func catCall() {
+        
         cats.fetchCatsList()
+        
+        self.activityIndicator.startAnimating()
+        
         cats.fetchCats(completion: { response in
+            
+            print("we do som")
+            
             
             if case let .success(data) = response {
                 print(response)
                 print("\(data[0])")
+                print("e don load")
+                DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
+                }
+                
                 
             }else if case let .failure(errorMessage) = response {
                 print("error wa o \(errorMessage)")
+                DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
+                }
+                
             }else if case let .error(error) = response{
+                DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
+                }
+                
                 print("\(error?.localizedDescription ?? "")")
-               
+                
             }
             
         })
@@ -87,11 +113,18 @@ class AllCatsViewController: UIViewController, NSFetchedResultsControllerDelegat
         navigationItem.title = "All Cats"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.tabBarItem.image = UIImage(named: "All Cats")
-
+        
     }
-
     
-
+    func setIndicators() {
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(activityIndicator)
+        activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    }
+    
+    
+    
 }
 
 extension AllCatsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -121,28 +154,22 @@ extension AllCatsViewController: UICollectionViewDelegate, UICollectionViewDataS
         
         
         
-//
-      
-            if items.liked == true {
-                cellOne.likeButton.setImage(UIImage(named: "RedLikedHeart"), for: .normal)
-                print("liked")
-                
+        //
         
-            } else {
-                cellOne.likeButton.setImage(UIImage(named: "unlikedHeart"), for: .normal)
-                print("unliked")
-                
-            }
+        if items.liked == true {
+            cellOne.likeButton.setImage(UIImage(named: "RedLikedHeart"), for: .normal)
+            print("liked")
+            
+            
+        } else {
+            cellOne.likeButton.setImage(UIImage(named: "unlikedHeart"), for: .normal)
+            print("unliked")
+            
+        }
         
-        
-       
-//        cellOne.likeButton.
-//        cellOne.likeButton.addTarget(self, action:  #selector(likeButtonTapped), for: .touchUpInside)
-//        allCatsCollectionView.reloadData()
-//        print("smurfs \(catList[0].name ?? "")")
         
         return cellOne
-      
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -162,32 +189,32 @@ extension AllCatsViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-          let width = collectionView.bounds.width
-          let numberOfItemsPerRow: CGFloat = 1
-          let spacing: CGFloat = allCatsCollectionFlowLayout.minimumInteritemSpacing
-          let availableWidth = width - spacing * (numberOfItemsPerRow + 1)
-          let itemDimension = floor(availableWidth / numberOfItemsPerRow)
-          return CGSize(width: itemDimension, height: 55)
-      }
+        let width = collectionView.bounds.width
+        let numberOfItemsPerRow: CGFloat = 1
+        let spacing: CGFloat = allCatsCollectionFlowLayout.minimumInteritemSpacing
+        let availableWidth = width - spacing * (numberOfItemsPerRow + 1)
+        let itemDimension = floor(availableWidth / numberOfItemsPerRow)
+        return CGSize(width: itemDimension, height: 55)
+    }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         print("Message Data Reloaded")
-//
+        //
         allCatsCollectionView.reloadData()
-     
+        
     }
     
     @IBAction func likeButtonTapped(_ sender: UIButton) {
         
         sender.isSelected = !sender.isSelected
         
-//        if sender.isSelected {
-//            sender.setImage(UIImage(named: "RedLikedHeart"), for: .selected)
-////            sender.setBackgroundImage(UIImage(named: "RedLikedHeart"), for: .selected)
-//        } else {
-//            sender.setImage(UIImage(named: "unlikedHeart"), for: .normal)
-//        }
+        //        if sender.isSelected {
+        //            sender.setImage(UIImage(named: "RedLikedHeart"), for: .selected)
+        ////            sender.setBackgroundImage(UIImage(named: "RedLikedHeart"), for: .selected)
+        //        } else {
+        //            sender.setImage(UIImage(named: "unlikedHeart"), for: .normal)
+        //        }
     }
     
-   
+    
 }

@@ -31,7 +31,7 @@ class CatsRepoImpl: BaseRepository, CatsRepo{
     
     func fetchCats(completion: @escaping ((NetworkResult<[CatsModel]>) -> Void)) {
         networkHelper.performGetRequest(endpoint: .breeds, returnType: [CatsModel].self, completion: { response in
-            
+            print("they break all")
             if case let .success(data) = response {
                 print("E don Show")
                 self.saveCatsList(cats: data)
