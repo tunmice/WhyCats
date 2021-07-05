@@ -34,12 +34,16 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phat Cats" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8M-LU-eoj">
                                                 <rect key="frame" x="0.0" y="0.0" width="59" height="22"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnB-nJ-bIb">
                                                 <rect key="frame" x="105" y="0.0" width="45" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="45" id="6bo-lw-BEA"/>
+                                                    <constraint firstAttribute="height" constant="22" id="fjT-P0-wu5"/>
+                                                </constraints>
                                                 <state key="normal" image="RedLikedHeart"/>
                                             </button>
                                         </subviews>

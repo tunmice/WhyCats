@@ -18,6 +18,9 @@ class WhyCatsTabBarController: UITabBarController {
         allCats.start()
         likedCats.start()
         allCats.navigationController.tabBarItem.image = UIImage(named: "All Cats")
+        allCats.navigationController.tabBarItem.title = "All Cats"
+        
+        likedCats.navigationController.tabBarItem.title = "Cats I Like"
         likedCats.navigationController.tabBarItem.image = UIImage(named: "LikedHeart")
         viewControllers = [allCats.navigationController, likedCats.navigationController]
 

@@ -20,6 +20,12 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Haven't liked any cats. Why don't you like cats?🥺" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bew-Mv-P4D">
+                    <rect key="frame" x="46" y="260" width="228" height="72"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ykE-1o-3h8">
                     <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -34,9 +40,13 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="bew-Mv-P4D" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="216" id="7sS-cZ-dyg"/>
                 <constraint firstItem="ykE-1o-3h8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="A29-Ax-99K"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="bew-Mv-P4D" secondAttribute="bottom" constant="236" id="Eau-DL-umD"/>
                 <constraint firstItem="ykE-1o-3h8" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="U1n-5M-9Ao"/>
                 <constraint firstItem="ykE-1o-3h8" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="X5i-FS-zIR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bew-Mv-P4D" secondAttribute="trailing" constant="46" id="aOC-0c-fcQ"/>
+                <constraint firstItem="bew-Mv-P4D" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="46" id="pCo-lB-OZa"/>
                 <constraint firstItem="ykE-1o-3h8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uZO-xl-tdf"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

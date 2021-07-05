@@ -51,6 +51,7 @@ class LikedCatsViewController: UIViewController, NSFetchedResultsControllerDeleg
         navigationItem.title = "Cats I Like"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.tabBarItem.image = UIImage(named: "LikedHeart")
+       
     }
     
     
@@ -73,7 +74,14 @@ extension LikedCatsViewController: UICollectionViewDelegate, UICollectionViewDat
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        catsFetchedResultController.fetchedObjects?.count ?? 0
+        
+        if catsFetchedResultController.fetchedObjects?.count == 0 {
+            likedCatsCollectionView.isHidden = true
+        } else {
+            likedCatsCollectionView.isHidden = false
+            print("file be")
+        }
+        return catsFetchedResultController.fetchedObjects?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
