@@ -1,0 +1,6 @@
+framework module Pods_WhyCats {
+  umbrella header "Pods-WhyCats-umbrella.h"
+
+  export *
+  module * { export * }
+}
