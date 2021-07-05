@@ -17,7 +17,7 @@ public class AllCatsCoreDataModel: NSManagedObject {
         self.name = cats.name ?? ""
         
         self.image = cats.image?.url ?? ""
-       
+        self.liked = cats.liked as NSNumber?
       
     }
 }
@@ -31,7 +31,16 @@ extension AllCatsCoreDataModel {
 
     @NSManaged public var name: String?
     @NSManaged public var image: String?
+    @NSManaged public var liked: NSNumber?
    
+    var isLiked: Bool {
+        get {
+            return Bool(truncating: liked ?? false)
+        }
+        set {
+            liked = NSNumber(value: newValue)
+        }
+    }
    
 
 }

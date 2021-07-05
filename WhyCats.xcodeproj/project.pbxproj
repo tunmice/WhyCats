@@ -48,6 +48,7 @@
 		22DB4204268F814B0007EBCA /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB4203268F814B0007EBCA /* CoreDataStack.swift */; };
 		22DB4209268F82AF0007EBCA /* CatsDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB4208268F82AF0007EBCA /* CatsDao.swift */; };
 		22DB421E268F87C60007EBCA /* Containers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB421D268F87C60007EBCA /* Containers.swift */; };
+		22DB42322690BC480007EBCA /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB42312690BC480007EBCA /* LocalStorage.swift */; };
 		480EA4FDEBA5F83C947CAD11 /* Pods_WhyCatsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09094AC9864D357C4EB568C1 /* Pods_WhyCatsTests.framework */; };
 		74C6BAAFE134288E93C5321A /* Pods_WhyCats_WhyCatsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16B2A9A21F77D215BAA7C89 /* Pods_WhyCats_WhyCatsUITests.framework */; };
 		A56DD7798FAC44343B9105C0 /* Pods_WhyCats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CA4F9062F9D426A8A7DADDF /* Pods_WhyCats.framework */; };
@@ -120,6 +121,7 @@
 		22DB4203268F814B0007EBCA /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		22DB4208268F82AF0007EBCA /* CatsDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatsDao.swift; sourceTree = "<group>"; };
 		22DB421D268F87C60007EBCA /* Containers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Containers.swift; sourceTree = "<group>"; };
+		22DB42312690BC480007EBCA /* LocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		3848B780B164FA19232CBD93 /* Pods-WhyCats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhyCats.debug.xcconfig"; path = "Target Support Files/Pods-WhyCats/Pods-WhyCats.debug.xcconfig"; sourceTree = "<group>"; };
 		3CA4F9062F9D426A8A7DADDF /* Pods_WhyCats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhyCats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF21D0861E5B8055626CB73 /* Pods-WhyCats-WhyCatsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhyCats-WhyCatsUITests.debug.xcconfig"; path = "Target Support Files/Pods-WhyCats-WhyCatsUITests/Pods-WhyCats-WhyCatsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 		22DB4165268E3A900007EBCA /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				22DB42312690BC480007EBCA /* LocalStorage.swift */,
 				22DB421D268F87C60007EBCA /* Containers.swift */,
 				22DB4132268E3A190007EBCA /* WhyCats.xcdatamodeld */,
 				22DB4203268F814B0007EBCA /* CoreDataStack.swift */,
@@ -603,6 +606,7 @@
 				22DB417D268E3E9B0007EBCA /* MainCoordinator.swift in Sources */,
 				22DB41B5268F2DC60007EBCA /* Networking.swift in Sources */,
 				22DB41C7268F2E280007EBCA /* EndpointType.swift in Sources */,
+				22DB42322690BC480007EBCA /* LocalStorage.swift in Sources */,
 				22DB41CF268F300D0007EBCA /* Image.swift in Sources */,
 				22DB4168268E3ABD0007EBCA /* AllCatsViewController.swift in Sources */,
 				22DB4209268F82AF0007EBCA /* CatsDao.swift in Sources */,

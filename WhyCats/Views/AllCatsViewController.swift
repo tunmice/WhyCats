@@ -20,6 +20,10 @@ class AllCatsViewController: UIViewController, NSFetchedResultsControllerDelegat
     
     let catList = [CatsModel]()
     
+    func someAction() {
+        print("I have performed ACTION")
+    }
+    
     lazy var catsFetchedResultController:NSFetchedResultsController<AllCatsCoreDataModel> = {
         let fetchedRequest = NSFetchRequest<AllCatsCoreDataModel>(entityName: "AllCatsCoreDataModel")
         var sdSortDate = NSSortDescriptor.init(key: "name", ascending: true)
@@ -43,17 +47,25 @@ class AllCatsViewController: UIViewController, NSFetchedResultsControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        callCats()
+       
         setAppearances()
         setCollectionViewTings()
+        
+        if catsFetchedResultController.fetchedObjects?.count == 0 {
+            callCats()
+        } else {
+            print("file be")
+        }
+        
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        callCats()
+//        callCats()
     }
     
     
+   
     
   
 
@@ -113,6 +125,29 @@ extension AllCatsViewController: UICollectionViewDelegate, UICollectionViewDataS
         guard let cellOne = dequeueCell as? AllCatsCollectionViewCell else {fatalError("Wrong Cell")}
         let items = catsFetchedResultController.object(at: indexPath)
         cellOne.catName.text = items.name ?? ""
+        
+        
+        
+//        if cellOne.likeButton.isSelected  {
+//            items.liked = true
+//        } else {
+//            items.liked = false
+//        }
+//        items.isLiked = (LocalStorage.sharedInstance.get(for: .likedBoolean) != nil)
+        DispatchQueue.main.async {
+            if items.liked == true {
+                cellOne.likeButton.setImage(UIImage(named: "RedLikedHeart"), for: .normal)
+                print("liked")
+                
+        
+            } else {
+                cellOne.likeButton.setImage(UIImage(named: "unlikedHeart"), for: .normal)
+                print("unliked")
+                
+            }
+        }
+        
+       
 //        cellOne.likeButton.
 //        cellOne.likeButton.addTarget(self, action:  #selector(likeButtonTapped), for: .touchUpInside)
 //        allCatsCollectionView.reloadData()
@@ -120,6 +155,22 @@ extension AllCatsViewController: UICollectionViewDelegate, UICollectionViewDataS
         
         return cellOne
       
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let items = catsFetchedResultController.object(at: indexPath)
+        if items.isLiked == false {
+            items.isLiked = true
+        } else {
+            items.isLiked = false
+        }
+        do {
+            try CoreDataStack.shared.persistentContainer.viewContext.save()
+        } catch {
+            
+        }
+        
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -133,7 +184,7 @@ extension AllCatsViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         print("Message Data Reloaded")
-        
+//
         allCatsCollectionView.reloadData()
      
     }
@@ -142,12 +193,12 @@ extension AllCatsViewController: UICollectionViewDelegate, UICollectionViewDataS
         
         sender.isSelected = !sender.isSelected
         
-        if sender.isSelected {
-            sender.setImage(UIImage(named: "RedLikedHeart"), for: .selected)
-//            sender.setBackgroundImage(UIImage(named: "RedLikedHeart"), for: .selected)
-        } else {
-            sender.setImage(UIImage(named: "unlikedHeart"), for: .normal)
-        }
+//        if sender.isSelected {
+//            sender.setImage(UIImage(named: "RedLikedHeart"), for: .selected)
+////            sender.setBackgroundImage(UIImage(named: "RedLikedHeart"), for: .selected)
+//        } else {
+//            sender.setImage(UIImage(named: "unlikedHeart"), for: .normal)
+//        }
     }
     
    

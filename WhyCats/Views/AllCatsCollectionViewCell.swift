@@ -16,30 +16,32 @@ class AllCatsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var catName: UILabel!
     
     @IBOutlet weak var catImageView: UIImageView!
+    var link: AllCatsViewController?
     
     var delegate : MyCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        likeButton.addTarget(self, action:  #selector(handleLike), for: .touchUpInside)
     }
     
-    override func prepareForReuse() {
-        likeButton.isSelected = false
+  
+    @objc func handleLike() {
+        link?.someAction()
+        print("i have not performed ACTION")
     }
-
 
    
     @IBAction func likeTapped(_ sender: UIButton) {
         
-        
-        
-        sender.isSelected = !sender.isSelected
-        
-        if sender.isSelected {
-            sender.setImage(UIImage(named: "RedLikedHeart"), for: .selected)
-//            sender.setBackgroundImage(UIImage(named: "RedLikedHeart"), for: .selected)
-        } else {
-            sender.setImage(UIImage(named: "unlikedHeart"), for: .normal)
-        }
+       
+//        sender.isSelected = !sender.isSelected
+//
+//        if sender.isSelected {
+//            sender.setImage(UIImage(named: "RedLikedHeart"), for: .selected)
+////            sender.setBackgroundImage(UIImage(named: "RedLikedHeart"), for: .selected)
+//        } else {
+//            sender.setImage(UIImage(named: "unlikedHeart"), for: .normal)
+//        }
     }
 }

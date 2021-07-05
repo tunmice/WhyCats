@@ -44,9 +44,6 @@
                                             <constraint firstAttribute="width" constant="18" id="i2b-dH-cqU"/>
                                         </constraints>
                                         <state key="normal" image="unlikedHeart"/>
-                                        <connections>
-                                            <action selector="likeTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="J8L-qF-ble"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
