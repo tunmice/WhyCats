@@ -8,10 +8,20 @@
 import UIKit
 
 class LikedCatsCollectionViewCell: UICollectionViewCell {
-
+    @IBOutlet weak var catImageView: UIImageView!
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var catName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setAppearances()
+        
     }
 
+    func setAppearances() {
+        likeButton.isUserInteractionEnabled = false
+        catImageView.layer.cornerRadius = 10
+        
+    }
+    
 }

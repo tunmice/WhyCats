@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 import Swinject
+import Kingfisher
 
 class AllCatsViewController: UIViewController, NSFetchedResultsControllerDelegate {
     
@@ -63,14 +64,7 @@ class AllCatsViewController: UIViewController, NSFetchedResultsControllerDelegat
     override func viewDidAppear(_ animated: Bool) {
 //        callCats()
     }
-    
-    
-   
-    
-  
-
-    
-    
+ 
     func callCats() {
 
         cats.fetchCatsList()
@@ -79,9 +73,6 @@ class AllCatsViewController: UIViewController, NSFetchedResultsControllerDelegat
             if case let .success(data) = response {
                 print(response)
                 print("\(data[0])")
-                DispatchQueue.main.async {
-                    self.allCatsCollectionView.reloadData()
-                }
                 
             }else if case let .failure(errorMessage) = response {
                 print("error wa o \(errorMessage)")
@@ -125,16 +116,13 @@ extension AllCatsViewController: UICollectionViewDelegate, UICollectionViewDataS
         guard let cellOne = dequeueCell as? AllCatsCollectionViewCell else {fatalError("Wrong Cell")}
         let items = catsFetchedResultController.object(at: indexPath)
         cellOne.catName.text = items.name ?? ""
+        let url = URL(string: items.image ?? "")
+        cellOne.catImageView.kf.setImage(with: url )
         
         
         
-//        if cellOne.likeButton.isSelected  {
-//            items.liked = true
-//        } else {
-//            items.liked = false
-//        }
-//        items.isLiked = (LocalStorage.sharedInstance.get(for: .likedBoolean) != nil)
-        DispatchQueue.main.async {
+//
+      
             if items.liked == true {
                 cellOne.likeButton.setImage(UIImage(named: "RedLikedHeart"), for: .normal)
                 print("liked")
@@ -145,7 +133,7 @@ extension AllCatsViewController: UICollectionViewDelegate, UICollectionViewDataS
                 print("unliked")
                 
             }
-        }
+        
         
        
 //        cellOne.likeButton.

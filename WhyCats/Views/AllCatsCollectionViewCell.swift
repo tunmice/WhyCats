@@ -23,6 +23,8 @@ class AllCatsCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         likeButton.addTarget(self, action:  #selector(handleLike), for: .touchUpInside)
+        catImageView.layer.cornerRadius = 10
+        likeButton.isUserInteractionEnabled = false
     }
     
   
