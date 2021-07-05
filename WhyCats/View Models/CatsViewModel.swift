@@ -8,14 +8,5 @@
 import Foundation
 
 class CatsViewModel: BaseViewModel {
-    
-//let cats = CatsRepoImpl()
-    
-    
-//    func fetchCats() {
-//        cats.fetchCats(completion: { response in
-//            
-//            
-//        })
-//    }
+
 }
