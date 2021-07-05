@@ -156,7 +156,7 @@ extension AllCatsViewController: UICollectionViewDelegate, UICollectionViewDataS
         let items = catsFetchedResultController.object(at: indexPath)
         cellOne.catName.text = items.name ?? ""
         let url = URL(string: items.image ?? "")
-        cellOne.catImageView.kf.setImage(with: url )
+        cellOne.catImageView.kf.setImage(with: url, placeholder: UIImage(named: "All Cats") )
         
         // set like accessory appearance
         if items.liked == true {

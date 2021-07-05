@@ -90,7 +90,7 @@ extension LikedCatsViewController: UICollectionViewDelegate, UICollectionViewDat
         guard let cellOne = dequeueCell as? LikedCatsCollectionViewCell else {fatalError("Wrong Cell")}
         let items = catsFetchedResultController.object(at: indexPath)
         let url = URL(string: items.image ?? "")
-        cellOne.catImageView.kf.setImage(with: url)
+        cellOne.catImageView.kf.setImage(with: url, placeholder: UIImage(named: "All Cats"))
         cellOne.catName.text = items.name
         
         return cellOne
