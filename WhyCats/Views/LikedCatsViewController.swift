@@ -96,6 +96,28 @@ extension LikedCatsViewController: UICollectionViewDelegate, UICollectionViewDat
         return cellOne
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let items = catsFetchedResultController.object(at: indexPath)
+        
+        
+        let uiAlert = UIAlertController(title: "Unlike Cat", message: "Are you sure you want to unlike this cat 🥺?", preferredStyle: UIAlertController.Style.alert)
+        self.present(uiAlert, animated: true, completion: nil)
+        
+        uiAlert.addAction(UIAlertAction(title: "Unlike", style: .destructive, handler: { action in
+            items.isLiked = false
+            
+            do {
+                try CoreDataStack.shared.persistentContainer.viewContext.save()
+                collectionView.reloadData()
+            } catch {
+                
+            }
+            
+        }))
+        
+        uiAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.bounds.width

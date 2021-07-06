@@ -39,7 +39,7 @@
 		22DB41CF268F300D0007EBCA /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB41CE268F300D0007EBCA /* Image.swift */; };
 		22DB41D4268F30130007EBCA /* CatsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB41D3268F30130007EBCA /* CatsRequestModel.swift */; };
 		22DB41D9268F301A0007EBCA /* Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB41D8268F301A0007EBCA /* Weight.swift */; };
-		22DB41E4268F33FF0007EBCA /* Base View Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB41E3268F33FF0007EBCA /* Base View Model.swift */; };
+		22DB41E4268F33FF0007EBCA /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB41E3268F33FF0007EBCA /* BaseViewModel.swift */; };
 		22DB41E9268F34400007EBCA /* CatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB41E8268F34400007EBCA /* CatsViewModel.swift */; };
 		22DB41EE268F34840007EBCA /* Base Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB41ED268F34840007EBCA /* Base Repository.swift */; };
 		22DB41F3268F34AA0007EBCA /* CatsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB41F2268F34AA0007EBCA /* CatsRepository.swift */; };
@@ -112,7 +112,7 @@
 		22DB41CE268F300D0007EBCA /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		22DB41D3268F30130007EBCA /* CatsRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatsRequestModel.swift; sourceTree = "<group>"; };
 		22DB41D8268F301A0007EBCA /* Weight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weight.swift; sourceTree = "<group>"; };
-		22DB41E3268F33FF0007EBCA /* Base View Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Base View Model.swift"; sourceTree = "<group>"; };
+		22DB41E3268F33FF0007EBCA /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		22DB41E8268F34400007EBCA /* CatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsViewModel.swift; sourceTree = "<group>"; };
 		22DB41ED268F34840007EBCA /* Base Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Base Repository.swift"; sourceTree = "<group>"; };
 		22DB41F2268F34AA0007EBCA /* CatsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsRepository.swift; sourceTree = "<group>"; };
@@ -256,7 +256,7 @@
 		22DB4160268E3A590007EBCA /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				22DB41E3268F33FF0007EBCA /* Base View Model.swift */,
+				22DB41E3268F33FF0007EBCA /* BaseViewModel.swift */,
 				22DB41E8268F34400007EBCA /* CatsViewModel.swift */,
 			);
 			path = "View Models";
@@ -634,7 +634,7 @@
 				22DB412A268E3A190007EBCA /* AppDelegate.swift in Sources */,
 				22DB418E268E3FEF0007EBCA /* TabBarCoordinator.swift in Sources */,
 				22DB412C268E3A190007EBCA /* SceneDelegate.swift in Sources */,
-				22DB41E4268F33FF0007EBCA /* Base View Model.swift in Sources */,
+				22DB41E4268F33FF0007EBCA /* BaseViewModel.swift in Sources */,
 				22DB4134268E3A190007EBCA /* WhyCats.xcdatamodeld in Sources */,
 				22DB4172268E3ACC0007EBCA /* LikedCatsViewController.swift in Sources */,
 				22DB41EE268F34840007EBCA /* Base Repository.swift in Sources */,
