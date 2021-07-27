@@ -21,21 +21,17 @@ class AllCatsViewController: UIViewController, NSFetchedResultsControllerDelegat
     private let cats: CatsRepo = Container.sharedContainer.resolve(CatsRepo.self)!
     
     let catList = [CatsModel]()
-    
+    var liked: Bool?
     var activityIndicator = UIActivityIndicatorView(style: .large)
     
-    func someAction() {
-        print("I have performed ACTION")
-    }
+  
     
     
     
     lazy var catsFetchedResultController:NSFetchedResultsController<AllCatsCoreDataModel> = {
         let fetchedRequest = NSFetchRequest<AllCatsCoreDataModel>(entityName: "AllCatsCoreDataModel")
         var sdSortDate = NSSortDescriptor.init(key: "name", ascending: true)
-        //        let firstPredicate = NSPredicate(format: "conversationcode == %@", self.conversation_code)
         fetchedRequest.sortDescriptors = [sdSortDate]
-        //        fetchedRequest.predicate = firstPredicate
         let controller = NSFetchedResultsController(fetchRequest: fetchedRequest, managedObjectContext: CoreDataStack.shared.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         
         controller.delegate = self as NSFetchedResultsControllerDelegate
@@ -65,47 +61,38 @@ class AllCatsViewController: UIViewController, NSFetchedResultsControllerDelegat
         } else {
             
         }
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //        callCats()
+  
     }
     //MARK:- fetch cats from api
     func catCall() {
         
-        cats.fetchCatsList()
         
         self.activityIndicator.startAnimating()
         
         cats.fetchCats(completion: { response in
+       
             
-            print("we do som")
-            
-            
-            if case let .success(data) = response {
+            if case .success(_) = response {
                 print(response)
-                print("\(data[0])")
-                print("e don load")
                 DispatchQueue.main.async {
                     self.activityIndicator.stopAnimating()
                 }
                 
                 
-            }else if case let .failure(errorMessage) = response {
-                print("error wa o \(errorMessage)")
+            }else if case .failure(_) = response {
+
                 DispatchQueue.main.async {
                     self.activityIndicator.stopAnimating()
                 }
                 
-            }else if case let .error(error) = response{
+            }else if case .error(_) = response{
                 DispatchQueue.main.async {
                     self.activityIndicator.stopAnimating()
                 }
-                
-                print("\(error?.localizedDescription ?? "")")
-                
+             
             }
             
         })
@@ -157,8 +144,12 @@ extension AllCatsViewController: UICollectionViewDelegate, UICollectionViewDataS
         cellOne.catName.text = items.name ?? ""
         let url = URL(string: items.image ?? "")
         cellOne.catImageView.kf.setImage(with: url, placeholder: UIImage(named: "All Cats") )
-        
+
         // set like accessory appearance
+        cellOne.likeButton.tag = indexPath.row
+        cellOne.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+
+        
         if items.liked == true {
             cellOne.likeButton.setImage(UIImage(named: "RedLikedHeart"), for: .normal)
             print("liked")
@@ -170,26 +161,11 @@ extension AllCatsViewController: UICollectionViewDelegate, UICollectionViewDataS
             
         }
         
-        
         return cellOne
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let items = catsFetchedResultController.object(at: indexPath)
-        if items.isLiked == false {
-            items.isLiked = true
-        } else {
-            items.isLiked = false
-        }
-        do {
-            try CoreDataStack.shared.persistentContainer.viewContext.save()
-        } catch {
-            
-        }
-        
-        
-    }
+   
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.bounds.width
@@ -201,23 +177,30 @@ extension AllCatsViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        print("Message Data Reloaded")
-        //
         allCatsCollectionView.reloadData()
         
     }
     
+
     @IBAction func likeButtonTapped(_ sender: UIButton) {
-        
+        let items = catsFetchedResultController.fetchedObjects
+        let item = items?[sender.tag]
         sender.isSelected = !sender.isSelected
+        print("\(items?[sender.tag].name ?? "")")
+        if item?.isLiked == false {
+            item?.isLiked = true
+               } else {
+                item?.isLiked = false
+               }
+               do {
+                   try CoreDataStack.shared.persistentContainer.viewContext.save()
+               } catch {
+       
+               }
         
-        //        if sender.isSelected {
-        //            sender.setImage(UIImage(named: "RedLikedHeart"), for: .selected)
-        ////            sender.setBackgroundImage(UIImage(named: "RedLikedHeart"), for: .selected)
-        //        } else {
-        //            sender.setImage(UIImage(named: "unlikedHeart"), for: .normal)
-        //        }
     }
     
     
 }
+
+

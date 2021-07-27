@@ -7,6 +7,9 @@
 
 import UIKit
 
+protocol  LikedCatCellDelegate: AnyObject {
+    func didTapLikeButton(with title: String)
+}
 
 
 class AllCatsCollectionViewCell: UICollectionViewCell {
@@ -15,23 +18,18 @@ class AllCatsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var catImageView: UIImageView!
    
-    
-    
+    var delegate: LikedCatCellDelegate?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
        
         catImageView.layer.cornerRadius = 10
-        likeButton.isUserInteractionEnabled = false
+
     }
     
-  
-//    @objc func handleLike() {
-//        
-//    }
-//
-//   
-//    @IBAction func likeTapped(_ sender: UIButton) {
-//   
-//    }
+   
+    @IBAction func likeTapped(_ sender: UIButton) {
+        delegate?.didTapLikeButton(with: catName.text ?? "")
+    }
 }
